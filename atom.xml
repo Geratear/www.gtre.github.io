@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>千～葉(GeraTear)</title>
+  
+  <subtitle>你所关注的就是你的世界</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2021-05-25T07:02:35.477Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Gera Tear</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>线程</title>
+    <link href="http://example.com/2021/05/25/%E7%BA%BF%E7%A8%8B/"/>
+    <id>http://example.com/2021/05/25/%E7%BA%BF%E7%A8%8B/</id>
+    <published>2021-05-25T06:56:19.394Z</published>
+    <updated>2021-05-25T07:02:35.477Z</updated>
+    
+    
+    
+    
+    
+    <category term="技术" scheme="http://example.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python的生成器</title>
+    <link href="http://example.com/2021/05/25/Python%E7%9A%84%E7%94%9F%E6%88%90%E5%99%A8/"/>
+    <id>http://example.com/2021/05/25/Python%E7%9A%84%E7%94%9F%E6%88%90%E5%99%A8/</id>
+    <published>2021-05-25T06:14:33.644Z</published>
+    <updated>2021-05-25T07:27:48.540Z</updated>
+    
+    <content type="html"><![CDATA[<p>生成器（yield函数）</p><h1 id="yield介绍"><a href="#yield介绍" class="headerlink" title="yield介绍"></a>yield介绍</h1><p>带有yield的函数在Python中称为生成器（generator）<br>生成斐波那契（Fibonacci）数列是一个非常简单的递归数列，除第一个和第二个数外，任意一个数都可由前两个数相加得到。</p><p>列子1：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">def A(max):</span><br><span class="line">    a,b,c = 0,0,1</span><br><span class="line">    while a &lt; max:</span><br><span class="line">        print(C)</span><br><span class="line">        b,c = c,b+c</span><br><span class="line">        a = a +1</span><br><span class="line">a(5)</span><br><span class="line"></span><br><span class="line">结果：1</span><br><span class="line">      1</span><br><span class="line">      2</span><br><span class="line">      3</span><br><span class="line">      5</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>直接在A函数中用print导致函数可复用性较差，因为A函数返回None,其它函数无法获得函数生成的数列。要提高A函数的可复用性，需返回一个列表（list）</p><p>列子2：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">def A(max):</span><br><span class="line">    a,b,c = 0,0,1</span><br><span class="line">    L = []</span><br><span class="line">    while a &lt; max:</span><br><span class="line">        L.append(c)</span><br><span class="line">        b,c = c, b+c</span><br><span class="line">        a = a + 1</span><br><span class="line">    return L</span><br><span class="line"></span><br><span class="line">结果： for a in A(5):</span><br><span class="line">        1</span><br><span class="line">        1</span><br><span class="line">        2</span><br><span class="line">        3</span><br><span class="line">        5</span><br></pre></td></tr></table></figure><p>函数在运行中占用的内存随着参数增大而增大，如果要控制内存占用，不要用列表保存中间结果，而是通过iterable对象来迭代</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">        for i in range(1000)： #会导致生成一个1000个元素的列表</span><br><span class="line">            pass                </span><br><span class="line">        yield</span><br><span class="line"></span><br><span class="line">        def A(max)：</span><br><span class="line">            a,b,c = 0,0,1</span><br><span class="line">            while a &lt; max:</span><br><span class="line">                yield ｃ　＃　打印Ｃ</span><br><span class="line">                b,c = c,b + c</span><br><span class="line">                a = a + 1</span><br><span class="line"></span><br><span class="line">结果：for a in A(5):</span><br><span class="line">        print(a)</span><br><span class="line">      1</span><br><span class="line">      1</span><br><span class="line">      2</span><br><span class="line">      3</span><br><span class="line">      5</span><br></pre></td></tr></table></figure><p>yiled作用就是把一个函数变成生成器，带有yield函数不再是普通函数，解释会认为是一个生成器，调用A(5)不会执行A函数，而是返回一个生成器对象。</p><h1 id="生成器的唤醒（next-函数和send-函数）"><a href="#生成器的唤醒（next-函数和send-函数）" class="headerlink" title="生成器的唤醒（next()函数和send()函数）"></a>生成器的唤醒（next()函数和send()函数）</h1><p>例子1：使用send()函数</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">def A():</span><br><span class="line">    i = 0</span><br><span class="line">    while i &lt; 5:</span><br><span class="line">        t = yield i</span><br><span class="line">        print(t)</span><br><span class="line">        i += 1</span><br><span class="line"></span><br><span class="line">    f = A()</span><br><span class="line">    next(f)</span><br><span class="line">    0</span><br><span class="line">    f.send(&#x27;111&#x27;)</span><br><span class="line">111</span><br><span class="line">    1</span><br><span class="line">    next(f)</span><br><span class="line">None</span><br><span class="line">    2</span><br><span class="line">    f.send(&#x27;000&#x27;)</span><br><span class="line">000</span><br><span class="line">    3</span><br></pre></td></tr></table></figure><p>使用send（）函数可以在唤醒同时断点处传入一个附加数据执行到yield时，A函数作用暂时保存，返回i的值，t接收send发送的值<br>例子2：使用next函数</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">    f = A()</span><br><span class="line">    next(f)</span><br><span class="line">    0</span><br><span class="line">    next(f)</span><br><span class="line">None</span><br><span class="line">     1</span><br><span class="line">    next(f)</span><br><span class="line">None</span><br><span class="line">    2</span><br><span class="line">    next(f)</span><br><span class="line">None</span><br><span class="line">    3</span><br><span class="line">    next(f)</span><br><span class="line">None</span><br><span class="line">    4</span><br><span class="line">    next(f)</span><br><span class="line">None            #超出范围</span><br></pre></td></tr></table></figure><p>例子3：使用__next__()函数</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">    f = A</span><br><span class="line">    f.__next__()</span><br><span class="line">    0</span><br><span class="line">    f.__next__()</span><br><span class="line">None</span><br><span class="line">    1</span><br><span class="line">    f.__next__()</span><br><span class="line">None </span><br><span class="line">    2</span><br><span class="line">    f.__next__()</span><br><span class="line">None</span><br><span class="line">    3</span><br><span class="line">    f.__next__()</span><br><span class="line">None</span><br><span class="line">    4</span><br><span class="line">    f.__next__() #超出比较，报出异常</span><br><span class="line">None</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;生成器（yield函数）&lt;/p&gt;
+&lt;h1 id=&quot;yield介绍&quot;&gt;&lt;a href=&quot;#yield介绍&quot; class=&quot;headerlink&quot; title=&quot;yield介绍&quot;&gt;&lt;/a&gt;yield介绍&lt;/h1&gt;&lt;p&gt;带有yield的函数在Python中称为生成器（genera</summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="http://example.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python的迭代器</title>
+    <link href="http://example.com/2021/05/25/Python%E7%9A%84%E8%BF%AD%E4%BB%A3%E5%99%A8/"/>
+    <id>http://example.com/2021/05/25/Python%E7%9A%84%E8%BF%AD%E4%BB%A3%E5%99%A8/</id>
+    <published>2021-05-25T05:44:12.188Z</published>
+    <updated>2021-05-25T06:11:27.707Z</updated>
+    
+    <content type="html"><![CDATA[<p>迭代器是访问集合元素的一种方式。迭代器对像从集合的第一个访问元素开始，直到所有的元素被访问结束。</p><p>作用：用于记录当前访问的位置，提供下一个元素。<br>特点：1.访问者不需要关心迭代器内部的结构，仅需要通过next()方法不断去获取下一个内容<br>      2.不能随机访问集合中的某个值，只能从头到尾依次访问<br>      3.访问到一半时不能往回退<br>      4.便于循环比较大的数据集合，节省内存</p><p>例子：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a = __iter__([1,2,3,4])</span><br><span class="line">a.__next__()</span><br><span class="line">结果：1</span><br><span class="line">a.__next__()</span><br><span class="line">结果: 2</span><br><span class="line">a.__next__()</span><br><span class="line">结果：3</span><br><span class="line">a.__next__()</span><br><span class="line">结果：4</span><br><span class="line">a.__next__() #出现异常</span><br><span class="line">结果：出现异常</span><br></pre></td></tr></table></figure><p>list、tuple、str等数据类型可以使用for…in 循环进行顺序依次提取元素的遍历，也称为迭代器</p><p>判断是否可迭代：isinstance()<br>__iter__向外提供迭代<br>__next()__和__iter()_<em>函数作用：<br>next()获取数据，前数据不存在时出现异常<br>iter()获取迭代器对象中的迭代对象，返回迭代器<br>使用_next</em>()函数时候就是调用迭代器的对象__next__方法<br>区别：Python3:<strong>next</strong>,Python2:next<br>函数_next()_和_iter()_与next和iter作用相同，有下划线是魔法方法</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;迭代器是访问集合元素的一种方式。迭代器对像从集合的第一个访问元素开始，直到所有的元素被访问结束。&lt;/p&gt;
+&lt;p&gt;作用：用于记录当前访问的位置，提供下一个元素。&lt;br&gt;特点：1.访问者不需要关心迭代器内部的结构，仅需要通过next()方法不断去获取下一个内容&lt;br&gt;     </summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="http://example.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python的装饰器</title>
+    <link href="http://example.com/2021/05/25/Python%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/"/>
+    <id>http://example.com/2021/05/25/Python%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/</id>
+    <published>2021-05-25T04:54:23.384Z</published>
+    <updated>2021-05-25T05:42:05.213Z</updated>
+    
+    <content type="html"><![CDATA[<p>装饰器的作用就是为已经存在的对象添加其它功能。<br>使用装饰器可以在函数执行前和执行后添加相应操作。<br>装饰器是函数，只是函数可以具有特殊含义，装饰器用来装饰函数或类，使用装饰器可以在函数执行前和执行后添加相应操作。</p><p>装饰器常用于插入日志，性能测试，事物处理验证<br>例子1：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def A(test):</span><br><span class="line">    def B():</span><br><span class="line">        return test()</span><br><span class="line">    return B</span><br><span class="line"></span><br><span class="line">@ A</span><br><span class="line">def test1():</span><br><span class="line">    print(&#x27;功能1&#x27;)</span><br><span class="line">@A</span><br><span class="line">def test2():</span><br><span class="line">    print(&#x27;功能2&#x27;)</span><br></pre></td></tr></table></figure><p>1.自动执行A函数并且将下面的函数名test1当作参数传递</p><p>2.将A函数的返回值，重复赋值test1</p><p>装饰器就是@调用封装名</p><p>例子2,无参数的函数：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from time import ctime,sleep</span><br><span class="line">def tiemfun(func)</span><br><span class="line">    def wrappendfunc():</span><br><span class="line">        print(&#x27;%s called at %s&#x27;%(func.__name__,ctime()))</span><br><span class="line">        func()</span><br><span class="line">   return wrappendfunc</span><br><span class="line">@timefunc</span><br><span class="line">def foo():</span><br><span class="line">print(&#x27;打印&#x27;)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;装饰器的作用就是为已经存在的对象添加其它功能。&lt;br&gt;使用装饰器可以在函数执行前和执行后添加相应操作。&lt;br&gt;装饰器是函数，只是函数可以具有特殊含义，装饰器用来装饰函数或类，使用装饰器可以在函数执行前和执行后添加相应操作。&lt;/p&gt;
+&lt;p&gt;装饰器常用于插入日志，性能测试，事物</summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="http://example.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python的闭包</title>
+    <link href="http://example.com/2021/05/25/Python%E7%9A%84%E9%97%AD%E5%8C%85/"/>
+    <id>http://example.com/2021/05/25/Python%E7%9A%84%E9%97%AD%E5%8C%85/</id>
+    <published>2021-05-25T04:04:11.798Z</published>
+    <updated>2021-05-25T04:45:20.611Z</updated>
+    
+    <content type="html"><![CDATA[<p>在函数内部再定义一个函数，并且这个函数用到外边的函数的变量，那么将这个函数以及用到的一些变量称为闭包</p><p>例子1:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def test(A):</span><br><span class="line">    def test_in(A_in):</span><br><span class="line">        print(&#x27;in test_in函数,A_in is%d&#x27; %A_in)</span><br><span class="line">        return A+A_in</span><br><span class="line"></span><br><span class="line">return A_in     #返回其实就是闭包结果</span><br><span class="line">ret = test(20)</span><br><span class="line">print(ret(100))</span><br><span class="line">print(ret(200))</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>例子2:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def test A(a,b):</span><br><span class="line">    def test(x):</span><br><span class="line">        return a*x+b</span><br><span class="line">    return test</span><br><span class="line">test1 = test_A(1,1)</span><br><span class="line">test2 = test_A(4,5)</span><br><span class="line">print(test1(5))</span><br><span class="line">print(test2(5))</span><br></pre></td></tr></table></figure><p>函数test与变量a,b构成闭包，创建闭包时通过，test_A的参数a,b 说明两个变量的取值，确定函数最终形成（y =x + 1 和 y =4x + 5）只需要变换参数a,b 就可以获得不同的直线表达函数。</p><p>闭包也具有提高代码可复用性的作用。</p><p>如果没有闭包，需要更多的参数传递，也减少代码可移植性，由于闭包引用外部函数的局部变量，则外部函数的局部变量没有及时释放，消耗内存。<br>函数里嵌套定义函数，并且内层函数使用外层函数的变量或参数，外层函数要返回这个内层函数。<br>内层函数及使用外层函数的变量或参数形成一个闭包。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;在函数内部再定义一个函数，并且这个函数用到外边的函数的变量，那么将这个函数以及用到的一些变量称为闭包&lt;/p&gt;
+&lt;p&gt;例子1:&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre</summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="http://example.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>进程之间通信</title>
+    <link href="http://example.com/2021/05/16/%E8%BF%9B%E7%A8%8B%E4%B9%8B%E9%97%B4%E9%80%9A%E4%BF%A1/"/>
+    <id>http://example.com/2021/05/16/%E8%BF%9B%E7%A8%8B%E4%B9%8B%E9%97%B4%E9%80%9A%E4%BF%A1/</id>
+    <published>2021-05-16T01:38:57.860Z</published>
+    <updated>2021-05-16T01:43:55.741Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="进程之间通信"><a href="#进程之间通信" class="headerlink" title="进程之间通信"></a>进程之间通信</h2><p>进程之间通信可连接公共空间进行通信，相互获取公共信息。</p><p>Queue使用</p><p>可以使用multiprocessing模块的Queue实现多进程之间的数据传递，Queue本身是一个消息队列。</p><p>Queue()函数在内存中申请一段缓冲区</p><p>存放数据 q.put(msg)</p><p>获取数据 sg = q.get()</p><p>消息队列特点：先进先出</p><ul><li><p>   q.put()列为满时候，可能会阻塞（调用q.qut()任务等待)</p></li><li><p>   q.get()在队列为空时候，可能会阻塞（调用者等待）</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;进程之间通信&quot;&gt;&lt;a href=&quot;#进程之间通信&quot; class=&quot;headerlink&quot; title=&quot;进程之间通信&quot;&gt;&lt;/a&gt;进程之间通信&lt;/h2&gt;&lt;p&gt;进程之间通信可连接公共空间进行通信，相互获取公共信息。&lt;/p&gt;
+&lt;p&gt;Queue使用&lt;/p&gt;
+&lt;p&gt;可以使用</summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="http://example.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>进程</title>
+    <link href="http://example.com/2021/05/16/%E8%BF%9B%E7%A8%8B/"/>
+    <id>http://example.com/2021/05/16/%E8%BF%9B%E7%A8%8B/</id>
+    <published>2021-05-16T01:38:57.858Z</published>
+    <updated>2021-05-16T04:39:34.517Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><p>进程就是执行程序，进程是一种任务的执行，多进程是多种任务的执行，目的主要是解决多个请求时减少请求时间与速度</p><h2 id="多进程"><a href="#多进程" class="headerlink" title="多进程"></a>多进程</h2><p>多进程是主要为了解决多个任务的请求，同时做多个事情。</p><ul><li>单核CPU实现多个任务的多进程</li><li>单核CPU实现多任务的进程就是多进程</li><li>单核CPU实现多任务就是依次执行时间片，实现时间片轮转。</li><li>时间片就是CPU执行时间分成相同的小段，每一小段称为时间片。</li></ul><h2 id="时间片"><a href="#时间片" class="headerlink" title="时间片"></a>时间片</h2><p>时间片就是CPU执行时间划分成相同的小段，每一小段称为时间片。<br>时间片轮转就是CPU轮转执行多个程序，每个程序只执行一个时间片长度，保存当时任务执行状态切换到下一次任务执行。（因为CPU计算的速度非常快，所以会以为是多进程执行）</p><p>CPU速度：CPU主频：2.5GHz<br>         1Hz=1秒10次<br>         10Hz=1秒10次<br>         1KHz=1000Hz/每秒=1秒1000次执行<br>         1MHz=1000KHz/每秒=1000*1000/每秒 1秒=10^6 (10的6次方)<br>         1GHz=1000MHz/每秒=1秒10的9次方=10亿</p><ul><li><p>并发执行：在计算机（CPU）是多个任务是顺序执行，在用户的角度上是多个任务同时执行</p></li><li><p>并行执行：在计算机角度和用户角度上都是多任务同时执行<br>（平时计算机（CPU）执行任务是并发执行）<br>（如果计算机（CPU）是4核到32核，执行任务是两个任务或小于核数的任务是并行执行）</p></li></ul><h2 id="程序与进程"><a href="#程序与进程" class="headerlink" title="程序与进程"></a>程序与进程</h2><p>编写完毕的代码，在没有运行时称为程序<br>正在运行的过程称为进程</p><ul><li><p>进程是操作系统分配系统资源基本单位，进程之间是相互独立的</p></li><li><p>进程中至少有一个线程称为主线程</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;进程&quot;&gt;&lt;a href=&quot;#进程&quot; class=&quot;headerlink&quot; title=&quot;进程&quot;&gt;&lt;/a&gt;进程&lt;/h2&gt;&lt;p&gt;进程就是执行程序，进程是一种任务的执行，多进程是多种任务的执行，目的主要是解决多个请求时减少请求时间与速度&lt;/p&gt;
+&lt;h2 id=&quot;多进程&quot;</summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="http://example.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习基础</title>
+    <link href="http://example.com/2021/05/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://example.com/2021/05/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</id>
+    <published>2021-05-16T01:38:57.856Z</published>
+    <updated>2021-05-16T04:37:08.091Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="人工智能"><a href="#人工智能" class="headerlink" title="人工智能"></a>人工智能</h2><p>人工智能之父，艾伦.图灵。图灵测试是1950年进行的一项科研测试。</p><p>马文·李·闵斯基（英语：Marvin Lee Minsky，1927年8月9日－2016年1月24日），科学家，专长于认知科学与人工智能领域，麻省理工学院人工智能实验室的创始人之一，著有几部人工智能和哲学方面的作品。1969年，因为在人工智能领域的贡献，获得图灵奖。</p><p>机器学习框架:</p><ul><li>Tensorflow</li><li>PyToRCH</li><li>theano</li><li>Caffe2</li><li>CHaine</li></ul><p>数据特征处理分析与归一化</p><p>例子：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">from sklearn.metrics import silhouette_score</span><br><span class="line">from sklearn.cluster import KMeans</span><br><span class="line"></span><br><span class="line">def kmeans():</span><br><span class="line">    </span><br><span class="line">    # 加载数据</span><br><span class="line"></span><br><span class="line">    ld = load_digits()</span><br><span class="line"></span><br><span class="line">    print(ld.target[:20])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    km = KMeans(n_clusters=810)</span><br><span class="line"></span><br><span class="line">    km.fit_transform(ld.data)</span><br><span class="line"></span><br><span class="line">    print(km.labels_[:20])</span><br><span class="line"></span><br><span class="line">    print(silhouette_score(ld.data,km.labels_))</span><br><span class="line"></span><br><span class="line">    return None</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__==&quot;__main__&quot;:</span><br><span class="line">    kmeans()</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;人工智能&quot;&gt;&lt;a href=&quot;#人工智能&quot; class=&quot;headerlink&quot; title=&quot;人工智能&quot;&gt;&lt;/a&gt;人工智能&lt;/h2&gt;&lt;p&gt;人工智能之父，艾伦.图灵。图灵测试是1950年进行的一项科研测试。&lt;/p&gt;
+&lt;p&gt;马文·李·闵斯基（英语：Marvin Le</summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="http://example.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>互斥和互斥锁</title>
+    <link href="http://example.com/2021/05/16/%E4%BA%92%E6%96%A5%E5%92%8C%E4%BA%92%E6%96%A5%E9%94%81/"/>
+    <id>http://example.com/2021/05/16/%E4%BA%92%E6%96%A5%E5%92%8C%E4%BA%92%E6%96%A5%E9%94%81/</id>
+    <published>2021-05-16T01:38:57.854Z</published>
+    <updated>2021-05-16T04:36:51.224Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="互斥和互斥锁"><a href="#互斥和互斥锁" class="headerlink" title="互斥和互斥锁"></a>互斥和互斥锁</h2><p>线程的互斥：要求一次一个线程的执行访问资源</p><p>互斥锁：每个线程访问公共资源之前都要先申请锁。如果申请到锁，可以访问公共资源，当资源访问完毕，释放锁</p><p>如果没有申请到锁，线程需要停止等待，直到获得锁。</p><p>线程锁是全局变量访问</p><p>申请锁：访问资源之前<br>释放锁：访问资源之后结束</p><p>锁是访问资源过程加锁</p><p>锁的优缺点</p><p>锁的优点：确保资源访问的正确性执行</p><p>锁的缺点：阻止多个线程并发执行，降低执行效率。</p><pre><code>      由于多线程里存在多个锁，不同线程有不同的锁，并且不释放锁会造成死锁。</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;互斥和互斥锁&quot;&gt;&lt;a href=&quot;#互斥和互斥锁&quot; class=&quot;headerlink&quot; title=&quot;互斥和互斥锁&quot;&gt;&lt;/a&gt;互斥和互斥锁&lt;/h2&gt;&lt;p&gt;线程的互斥：要求一次一个线程的执行访问资源&lt;/p&gt;
+&lt;p&gt;互斥锁：每个线程访问公共资源之前都要先申请锁。如果</summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="http://example.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows系统下的进程或跨平台的进程</title>
+    <link href="http://example.com/2021/05/16/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E8%BF%9B%E7%A8%8B%E6%88%96%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%9A%84%E8%BF%9B%E7%A8%8B/"/>
+    <id>http://example.com/2021/05/16/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E8%BF%9B%E7%A8%8B%E6%88%96%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%9A%84%E8%BF%9B%E7%A8%8B/</id>
+    <published>2021-05-16T01:38:57.851Z</published>
+    <updated>2021-05-16T04:35:41.699Z</updated>
+    
+    <content type="html"><![CDATA[<p>由于Python是跨平台的，Unix/Linux用fork函数。但是windows系统下没有fork函数，所以为支持多平台进程提供multiProcessing模块。</p><h2 id="multiProcessing模块"><a href="#multiProcessing模块" class="headerlink" title="multiProcessing模块"></a>multiProcessing模块</h2><p>multiProcessing模块提供一个Process类代表进程对象</p><p>栗子：<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">from multiProcessing import Process</span><br><span class="line"></span><br><span class="line">def   task():</span><br><span class="line"></span><br><span class="line"> for i in range(3):</span><br><span class="line"></span><br><span class="line"> print(&#x27;子进程Pid = %d  i =%d&#x27; %(os.getpid(),i))</span><br><span class="line"></span><br><span class="line"> time.Sleep(1)</span><br><span class="line"></span><br><span class="line">def  main():</span><br><span class="line"></span><br><span class="line"> p = process(target = task)    #创建Process对象，指定Process进程对象</span><br><span class="line"></span><br><span class="line"> p.start()</span><br><span class="line"></span><br><span class="line"> print(p.is_alive())</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;由于Python是跨平台的，Unix/Linux用fork函数。但是windows系统下没有fork函数，所以为支持多平台进程提供multiProcessing模块。&lt;/p&gt;
+&lt;h2 id=&quot;multiProcessing模块&quot;&gt;&lt;a href=&quot;#multiProcess</summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="http://example.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL数据库</title>
+    <link href="http://example.com/2021/05/16/MySQL/"/>
+    <id>http://example.com/2021/05/16/MySQL/</id>
+    <published>2021-05-16T01:38:57.849Z</published>
+    <updated>2021-05-16T04:36:07.735Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><p>MySQL数据库是一个关系型数据库<br>MySQL数据库特点</p><ul><li>使用C和C++编写，并使用多种编译器进行测试，保证可移植性</li><li>支持多种系统：如Linux、Windows、MacOS、AIX</li><li>为多种编程语言提供API、如C、C++、php、Java、Python、Ruby</li><li>支持多线程，充分利用CPU资源</li><li>支持SQL查询语句优化，有效提高查询速度</li><li>提供多语言编码如GB2312、UTF-8</li><li>支持多种存储</li><li>支持大型数据、能处理拥有上千万条记录</li><li>提供用于管理、优化、检查数据的管理工具</li><li>MySQL数据库分为社区版和商业版，体积小、速度快、成本低尤其是开源代码</li><li>MySQL使用标准sql数据语言形式</li><li>复制全局事物标识</li><li>复制无崩溃从机</li></ul><h2 id="服务端（server）"><a href="#服务端（server）" class="headerlink" title="服务端（server）"></a>服务端（server）</h2><ul><li><p>开启服务</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service mysql start</span><br></pre></td></tr></table></figure></li><li><p>停止服务</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service mysql stop</span><br></pre></td></tr></table></figure></li><li><p>重启服务</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service mysql restart</span><br></pre></td></tr></table></figure></li></ul><h2 id="数据库操作命令"><a href="#数据库操作命令" class="headerlink" title="数据库操作命令"></a>数据库操作命令</h2><ul><li><p>Mysql安装命令</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br></pre></td></tr></table></figure></li><li><p>mysql启动运行</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service mysql start</span><br></pre></td></tr></table></figure></li><li><p>查看mysql是否运行进程</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps ajx|grep mysql</span><br></pre></td></tr></table></figure></li><li><p>Mysql数据库连接登陆</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u 用户名 -p 密码</span><br></pre></td></tr></table></figure></li><li><p>mysql数据库退出</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">quit或者exit或者ctrl+d</span><br></pre></td></tr></table></figure></li><li><p>查看mysql版本和目前时间</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select version()；</span><br><span class="line">select now()；</span><br></pre></td></tr></table></figure></li><li><p>修改输入提示符</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Prompt &gt;&gt;&gt;</span><br></pre></td></tr></table></figure></li><li><p>查看Mysql所有数据库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure></li><li><p>使用数据库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user 数据库名称;</span><br></pre></td></tr></table></figure></li><li><p>查看当前使用的数据库名称</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select database();</span><br></pre></td></tr></table></figure></li><li><p>创建数据库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database 数据库名 chareset = utf8;</span><br></pre></td></tr></table></figure></li><li><p>删除数据库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database 数据库名</span><br></pre></td></tr></table></figure></li></ul><h2 id="数据表操作"><a href="#数据表操作" class="headerlink" title="数据表操作"></a>数据表操作</h2><ul><li><p>查看当前数据库中所有表</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure></li><li><p>查看表结构</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">desc  表名;</span><br><span class="line">desc  classes;</span><br></pre></td></tr></table></figure></li><li><p>创建表并表单自动增长(auto_increment)</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create table 表名(</span><br><span class="line">id int unsigned primar key not null auto_increment</span><br><span class="line">);</span><br></pre></td></tr></table></figure></li><li><p>修改表数据——添加字段</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 add 列名 类型;</span><br></pre></td></tr></table></figure></li><li><p>修改表数据——重命名修改(change)</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 change 原名  新名 类型及约束;</span><br></pre></td></tr></table></figure></li><li><p>修改表数据——修改字段——不重命名版（modify）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 modify 列名 类型及约束;</span><br></pre></td></tr></table></figure></li><li><p>删除字段——修改表</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter  table  表名  drop  列名;</span><br></pre></td></tr></table></figure></li><li><p>删除数据表</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table  表名;</span><br></pre></td></tr></table></figure></li><li><p>查看表的创建</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show create  table  表名;</span><br></pre></td></tr></table></figure></li></ul><h2 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h2><ul><li><p>数据增加<br>格式：Insert [into] 表名 values(…);<br>全列插入：insert into 表名 values(0，”小明”,1,”汉族”,”2010-1-1”);<br>指定列插入：insert into 表名(name,age,gender)values(“小明”,”18”,”4”);<br>批量插入: insert into 表名(列1，…) values(值1,…),(值1,…)…;</p></li><li><p>数据修改<br>格式：updata 表名 set 列1=值1，列2=值2 … where条件;<br>栗子：updata A1 set  L1 = 0, L2=”值” where id = 5;</p></li><li><p>数据删除<br>格式：delete from 表名 where 条件判断<br>栗子：delete from  A1 where id =5;</p></li></ul><p>注：逻辑删除本质就是修改操作<br>updata A1 set 列1= 1 where id =1;</p><p>提示：如果数据删除时不加where条件判断会删除表里的所有数据</p><ul><li><p>数据备份<br>mysqldump -u用户名   -p数据库名 &gt; 新文件.SQL</p></li><li><p>数据恢复<br>mysql -u用户名 -p新数据库名 &lt; 文件名.SQL</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;MySQL&quot;&gt;&lt;a href=&quot;#MySQL&quot; class=&quot;headerlink&quot; title=&quot;MySQL&quot;&gt;&lt;/a&gt;MySQL&lt;/h2&gt;&lt;p&gt;MySQL数据库是一个关系型数据库&lt;br&gt;MySQL数据库特点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用C和C++编写，并使用</summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="http://example.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL数据库</title>
+    <link href="http://example.com/2021/05/16/MongoDB/"/>
+    <id>http://example.com/2021/05/16/MongoDB/</id>
+    <published>2021-05-16T01:38:57.847Z</published>
+    <updated>2021-03-28T07:53:58.585Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="MongoDB数据库"><a href="#MongoDB数据库" class="headerlink" title="MongoDB数据库"></a>MongoDB数据库</h2><p>MongoDB是一个基于分布式文件，存储的NOSQL数据库，是面向集合的存储，复制和高可用性。支持服务器之间的数据库复制。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">启动：sudo service mongod start</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;MongoDB数据库&quot;&gt;&lt;a href=&quot;#MongoDB数据库&quot; class=&quot;headerlink&quot; title=&quot;MongoDB数据库&quot;&gt;&lt;/a&gt;MongoDB数据库&lt;/h2&gt;&lt;p&gt;MongoDB是一个基于分布式文件，存储的NOSQL数据库，是面向集合的存储</summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="http://example.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux系统下的进程</title>
+    <link href="http://example.com/2021/05/16/Linux%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E8%BF%9B%E7%A8%8B%E5%87%BD%E6%95%B0/"/>
+    <id>http://example.com/2021/05/16/Linux%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E8%BF%9B%E7%A8%8B%E5%87%BD%E6%95%B0/</id>
+    <published>2021-05-16T01:38:57.829Z</published>
+    <updated>2021-05-31T07:47:29.790Z</updated>
+    
+    <content type="html"><![CDATA[<p>fork()函数</p><p>如用fork函数，导入Python的OS模块调用fork,创建进程<br>栗子：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line"></span><br><span class="line">A = os.fork()</span><br><span class="line">print(&#x27;fork返回值：%d&#x27; %A) </span><br><span class="line"></span><br></pre></td></tr></table></figure><ul><li><p>Linux和Unix系统创建进程会父进程产生子进程。</p></li><li><p>Linux系统查看进程命令:PS -ef | head -3</p></li><li><p>PID是子进程       PPID是父进程</p></li><li><p>get pid函数与get ppid函数</p></li><li><p>os.getpid()是获得当前进程Pid</p></li><li><p>os.getppid()是获得当前进程的父进程PPid</p></li></ul><h2 id="fork函数原理"><a href="#fork函数原理" class="headerlink" title="fork函数原理:"></a>fork函数原理:</h2><p>   fork函数是通过复制父进程产生子进程</p><p>注：fork函数在父进程中返回新进程（子进程）的pid<br>    fork函数在子进程中返回特殊值0</p><p>pid大于0是父进程，pid等于0是子进程</p><p>当前进程产生新的进程，进程是在迭代的</p><p>父进程产生子进程之后，那个进程先运行由操作系统调度</p><h2 id="进程的全局变量"><a href="#进程的全局变量" class="headerlink" title="进程的全局变量"></a>进程的全局变量</h2><p>操作系统在进程逻辑上是隔离的，不同进程之间全局变量不能共享的（系统安全性，如支付宝与QQ进程之间通信是不安全的进程与进程之间不能直接通信）</p><p>前台进程与后台进程</p><p>前台进程可以接收键盘输入</p><p>后台进程就是父进程销毁子进程变成后台进程（变后台进程时提示符直接打印出来，子进程接着提示符往后打印出来）</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;fork()函数&lt;/p&gt;
+&lt;p&gt;如用fork函数，导入Python的OS模块调用fork,创建进程&lt;br&gt;栗子：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="http://example.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kafka</title>
+    <link href="http://example.com/2021/05/16/kafka/"/>
+    <id>http://example.com/2021/05/16/kafka/</id>
+    <published>2021-05-16T01:38:57.795Z</published>
+    <updated>2021-05-16T04:37:47.343Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h2><p>Kafka是最初由Linkedin公司开发，是一个分布式、分区的、多副本的、多订阅者，基于zookeeper协调的分布式日志系统（也可以当做MQ系统），常见可以用于web/nginx日志、访问日志，消息服务等等，Linkedin于2010年贡献给了Apache基金会并成为顶级开源项目。</p><p>主要应用场景是：日志收集系统和消息系统。<br>Kafka主要设计目标：</p><ul><li>以时间复杂度为O(1)的方式提供消息持久化能力，即使对TB级以上数据也能保证常数时间的访问性能。</li><li>高吞吐率。即使在非常廉价的商用机器上也能做到单机支持每秒100K条消息的传输。</li><li>支持Kafka Server间的消息分区，及分布式消费，同时保证每个partition内的消息顺序传输。</li><li>同时支持离线数据处理和实时数据处理。</li><li>Scale out:支持在线水平扩展</li></ul><h2 id="消息系统"><a href="#消息系统" class="headerlink" title="消息系统"></a>消息系统</h2><p>一个消息系统负责将数据从一个应用传输到另一个应用，应用只需要关注于数据本身。这样有效解决数据传递，无需关注数据是如果传输的。分布式消息传输基于可靠消息队列，在客户端和消息系统之间异步传输数据。</p><p>两种数据传输模式：</p><ul><li>点对点传输</li><li>发布——订阅模式传输</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;Kafka&quot;&gt;&lt;a href=&quot;#Kafka&quot; class=&quot;headerlink&quot; title=&quot;Kafka&quot;&gt;&lt;/a&gt;Kafka&lt;/h2&gt;&lt;p&gt;Kafka是最初由Linkedin公司开发，是一个分布式、分区的、多副本的、多订阅者，基于zookeeper协调的分</summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="http://example.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>漫步行者</title>
+    <link href="http://example.com/2021/04/25/%E6%BC%AB%E6%AD%A5%E8%A1%8C%E8%80%85/"/>
+    <id>http://example.com/2021/04/25/%E6%BC%AB%E6%AD%A5%E8%A1%8C%E8%80%85/</id>
+    <published>2021-04-25T08:21:52.167Z</published>
+    <updated>2021-05-16T04:38:06.363Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="漫步行者"><a href="#漫步行者" class="headerlink" title="漫步行者"></a>漫步行者</h2><p>我行黑夜里的雨步<br>黑夜里迷失自我<br>是我拥有了黑夜<br>还是黑夜拥有了我<br>我们只是黑夜里的独行者<br>雨点是黑夜里的见证者<br>滴答雨滴划过黑夜<br>点点滴滴划过足迹<br>偶然见证我们的事迹<br>待雨滴消散时的彩虹<br>醒时是泡沫的彩虹梦<br>时光匆匆 泡沫蒸发的岁月<br>时间曼曼 已是无声的告别<br>岁月无期 已成残缺的记忆</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;漫步行者&quot;&gt;&lt;a href=&quot;#漫步行者&quot; class=&quot;headerlink&quot; title=&quot;漫步行者&quot;&gt;&lt;/a&gt;漫步行者&lt;/h2&gt;&lt;p&gt;我行黑夜里的雨步&lt;br&gt;黑夜里迷失自我&lt;br&gt;是我拥有了黑夜&lt;br&gt;还是黑夜拥有了我&lt;br&gt;我们只是黑夜里的独行者&lt;br&gt;雨</summary>
+      
+    
+    
+    
+    
+    <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>爬虫基础篇——之理论篇</title>
+    <link href="http://example.com/2021/04/25/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E7%AF%87%E2%80%94%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87/"/>
+    <id>http://example.com/2021/04/25/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E7%AF%87%E2%80%94%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87/</id>
+    <published>2021-04-25T08:21:52.167Z</published>
+    <updated>2021-05-16T04:34:18.346Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.网络爬虫又称网络蜘蛛、网络机器人是一种按照一定的规则，自动抓取万维网信息的程序或脚本</p><p>2.搜索引擎就是通用网络爬虫，如：google、百度（通用爬虫）     通用爬虫具有一定的局限性<br>3.网络爬虫类型：<strong>通用网络爬虫</strong>、<strong>聚集网络爬虫</strong>、<strong>分布式网络爬</strong><br>4.爬虫主要步骤：</p><ul><li><p>1.对爬取目标的 url 定义</p></li><li><p>2.对网页数据分析与协议获取对应 HTML</p></li><li><p>3.对页面进行提取 HTML 页面有价值的数据<br><img src="https://img-blog.csdnimg.cn/20190422003146166.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1NjU5ODEy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></li></ul><ol start="5"><li> 通用爬虫需要遵守一定规则（nofollow 协议或 Robots 协议），全称是网络爬虫排除标准</li><li>通用爬虫只能抓取 HTML、PDF、word、wps、XLP、PPT、TXflash、音频、脚本程序</li><li>HTTP 协议（Hyper Text Transfer Protocl，超文本传输协议）是面的规则</li><li>HTTPS 协议（Hypertext Transfer Protocl oVer Secure Socket Laye层（安全套接层）主要用于安全传输协议，在网络传输层进行加密</li></ol><ul><li>HTTP 的端口号：80</li><li>HTTPS 的端口号：443</li></ul><ol start="9"><li>HTTP 请求与响应：浏览器发送请求等待服务器响应并返回数流程图 浏览器 发送请求数据 响应并返回数据<br><img src="https://img-blog.csdnimg.cn/20190422004510653.png" alt="在这里插入图片描述"></li><li>统一资源定位符 URL:如 <a href="http://www.baidu.com:8080/a">http://www.baidu.com:8080/a</a><br><img src="https://img-blog.csdnimg.cn/2019042200484918.png" alt="在这里插入图片描述"></li></ol><p>11.客户端 HTTP 请求：</p><ul><li>浏览器发送一个 HTTP 请求到服务器</li><li>请求格式: 请求行、请求头、空行.请求数据</li><li>GET： http:// <a href="http://www.baidu.com/HTTP/1.1">www.baidu.com/HTTP/1.1</a></li><li>Host:：<a href="http://www.baidu.com/">www.baidu.com</a></li><li>User-Aget: Mozilla/chrome</li><li>Cookie：</li></ul><p>12.HTTP 请求主要分为 get 和 postGet 请求：</p><ul><li>Get请求：是从服务器上获取页面信息</li><li>Post 请求：是向服务器提交数据并获取页面信息</li><li><strong>Get 请求参数都显示在 URL 上，服务器根据请求 URL 的参数产生响的一部分</strong></li><li><strong>Post 请求参数在请求体中，消息长度没有限制而且隐式方式进行在 URL 中，而是在请求体中因此 Get 请求方式不安全，而 Post 请求方式相对来说比较安全</strong></li></ul><p>13.请求报头</p><ul><li>Host（主机和端口号）</li><li>UPgrade-lnsecure-Reuqusts(升级为 HTTPS 请求)</li><li>User-agent(浏览器名称)</li><li>Accept(传输文件类型)</li><li>Referer(页面跳转来源)</li><li>Accept-Encoding(文件编解码格式)</li><li>Accept-Language(语言类型)</li><li>Accept-charset(字符编码)</li><li>CookieContent-Type(Post 数据类型)</li><li>服务端 HTTP 响应</li></ul><p>14.响应报头</p><ul><li>Cache-Control:must-revalidate,no-cache,Private</li><li>Connection:Keep-alive</li><li>Content-Encoding:gzip</li><li>Content-Type:text/html;charset = utf-8</li><li>Date:sun,21 sep 2017.01:06.21 GMT<br>服务器端发送资源时的时间，不同时区在相互请求资源时间混乱，http 协议中发送时间都<br>是 GMT</li><li>Server : Tengine/1.4.6<br>服务器和相对应的版本，只是告诉浏览器服务器的信息</li><li>Transfer-Encoding:chunked</li></ul><ol start="15"><li>响应状态码：</li></ol><ul><li>200:访问成功正常</li><li>404:访问失败，没有找到请求信息</li><li>500:服务器端出现错误，请求未完成</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;1.网络爬虫又称网络蜘蛛、网络机器人是一种按照一定的规则，自动抓取万维网信息的程序或脚本&lt;/p&gt;
+&lt;p&gt;2.搜索引擎就是通用网络爬虫，如：google、百度（通用爬虫）     通用爬虫具有一定的局限性&lt;br&gt;3.网络爬虫类型：&lt;strong&gt;通用网络爬虫&lt;/strong&gt;</summary>
+      
+    
+    
+    
+    
+    <category term="爬虫" scheme="http://example.com/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>黑夜</title>
+    <link href="http://example.com/2021/04/25/%E9%BB%91%E5%A4%9C/"/>
+    <id>http://example.com/2021/04/25/%E9%BB%91%E5%A4%9C/</id>
+    <published>2021-04-25T08:21:52.167Z</published>
+    <updated>2021-05-16T04:34:39.629Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="夜"><a href="#夜" class="headerlink" title="夜"></a>夜</h2><p>熙熙攘攘 白昼<br>灯火通明 夜晚<br>黑夜的宁静是多么安详<br>也让浮躁喧闹的事物变得瞬间停留<br>也许是安静让人所思所想<br>也许是内心的停留<br>让黑夜活在黑的宁静，黑夜的聆听<br>让微风拂过心中一丝思索<br>也是对黑夜的尊敬与敬畏之心<br>夜是那么黑，心是那么明<br>宁听黑夜的微凉，凉过心中的执念<br>宁听心间的黑夜与思考，黑夜才是最好的向往</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;夜&quot;&gt;&lt;a href=&quot;#夜&quot; class=&quot;headerlink&quot; title=&quot;夜&quot;&gt;&lt;/a&gt;夜&lt;/h2&gt;&lt;p&gt;熙熙攘攘 白昼&lt;br&gt;灯火通明 夜晚&lt;br&gt;黑夜的宁静是多么安详&lt;br&gt;也让浮躁喧闹的事物变得瞬间停留&lt;br&gt;也许是安静让人所思所想&lt;br&gt;也许是内</summary>
+      
+    
+    
+    
+    
+    <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello</title>
+    <link href="http://example.com/2021/04/25/hello/"/>
+    <id>http://example.com/2021/04/25/hello/</id>
+    <published>2021-04-25T08:21:52.151Z</published>
+    <updated>2021-04-25T08:29:46.745Z</updated>
+    
+    <content type="html"><![CDATA[<p>大家好！欢迎来到GeraTear的Blog。笔者电子邮箱:<a href="mailto:&#71;&#x65;&#114;&#97;&#x74;&#101;&#x61;&#114;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#71;&#x65;&#114;&#97;&#x74;&#101;&#x61;&#114;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a> ,欢迎一起交流与成长！</p><h2 id="Hello"><a href="#Hello" class="headerlink" title="Hello"></a>Hello</h2><p>——————如果说人生是自我编写的程序<br>——————那么青春就是其中意味深长的代码<br>——————我们敲击着人生的轨迹<br>——————我们尝试着不断自我调试与优化<br>——————无论运行结果如何都将是人生风景</p><p>By:轩</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;大家好！欢迎来到GeraTear的Blog。笔者电子邮箱:&lt;a href=&quot;mailto:&amp;#71;&amp;#x65;&amp;#114;&amp;#97;&amp;#x74;&amp;#101;&amp;#x61;&amp;#114;&amp;#64;&amp;#x67;&amp;#x6d;&amp;#97;&amp;#x69;&amp;#x6c;&amp;#x2e;&amp;#x63;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>了解我</title>
+    <link href="http://example.com/2021/04/25/%E4%BA%86%E8%A7%A3%E6%88%91/"/>
+    <id>http://example.com/2021/04/25/%E4%BA%86%E8%A7%A3%E6%88%91/</id>
+    <published>2021-04-25T08:21:52.151Z</published>
+    <updated>2021-06-26T12:52:55.757Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="博客的初心"><a href="#博客的初心" class="headerlink" title="博客的初心"></a>博客的初心</h2><p>希望记录平时遇到的问题和知识或所思所想！</p><ul><li>其实一直以来喜欢瞎折腾;(Ps):其实我弄水晶头、拉网线、配 IP、装系统、给手机贴膜的技术还算可以的，其它都不行。</li></ul><h2 id="兴趣"><a href="#兴趣" class="headerlink" title="兴趣"></a>兴趣</h2><ul><li>运动：跑步、溜冰、羽毛球都喜欢</li><li>摄影：任何时候都有美好的一瞬间</li><li>唱歌：五音不全的我也能成为麦霸</li><li>哲学：人生是一场无止境的哲学</li><li>音乐：许嵩、轻音乐</li><li>旅行：遇到不一样的人和风景</li><li>读书：历史，专业书籍</li><li>动漫：哆啦A梦、纳米核心、全职高手、末世觉醒等等</li><li>分享：喜欢把自己的经验分享给大家</li><li>DIY：一切皆可创造<h2 id="欢迎留言"><a href="#欢迎留言" class="headerlink" title="欢迎留言"></a>欢迎留言</h2>曾就职于朵莓网络，实习僧一枚。如果有什么建议和想法，都可以和我留言，就算留言未必有回响————By:轩</li><li>电子邮箱：<a href="mailto:&#x47;&#101;&#x72;&#97;&#x54;&#101;&#x61;&#114;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#46;&#99;&#x6f;&#109;">&#x47;&#101;&#x72;&#97;&#x54;&#101;&#x61;&#114;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#46;&#99;&#x6f;&#109;</a></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;博客的初心&quot;&gt;&lt;a href=&quot;#博客的初心&quot; class=&quot;headerlink&quot; title=&quot;博客的初心&quot;&gt;&lt;/a&gt;博客的初心&lt;/h2&gt;&lt;p&gt;希望记录平时遇到的问题和知识或所思所想！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;其实一直以来喜欢瞎折腾;(Ps):其实我弄水晶头</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>彩虹弧度</title>
+    <link href="http://example.com/2021/04/25/%E5%BD%A9%E8%99%B9%E5%BC%A7%E5%BA%A6/"/>
+    <id>http://example.com/2021/04/25/%E5%BD%A9%E8%99%B9%E5%BC%A7%E5%BA%A6/</id>
+    <published>2021-04-25T08:21:52.151Z</published>
+    <updated>2021-05-16T04:35:14.817Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="彩虹弧度"><a href="#彩虹弧度" class="headerlink" title="彩虹弧度"></a>彩虹弧度</h2><p>背影云彩之间的花朵唯美而触手可及<br>舒服的船只游过温暖的心房</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;彩虹弧度&quot;&gt;&lt;a href=&quot;#彩虹弧度&quot; class=&quot;headerlink&quot; title=&quot;彩虹弧度&quot;&gt;&lt;/a&gt;彩虹弧度&lt;/h2&gt;&lt;p&gt;背影云彩之间的花朵唯美而触手可及&lt;br&gt;舒服的船只游过温暖的心房&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+    <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+</feed>
