@@ -180,20 +180,11 @@
                 <ul class="drawer-sub-menu" v-if="isOpen(5)">
                   
                   <li>
-                    <a href="/huoban">
+                    <a href="/me/IT%E5%8A%A8%E6%BC%AB.mp4">
                       
                       <i class="fa fa-film" style="margin-top: -20px;"></i>
                       
-                      <span>友情连接</span>
-                    </a>
-                  </li>
-                  
-                  <li>
-                    <a href="/me">
-                      
-                      <i class="fa fa-film" style="margin-top: -20px;"></i>
-                      
-                      <span>关于我</span>
+                      <span>程序人生</span>
                     </a>
                   </li>
                   
@@ -345,20 +336,11 @@
                 <ul class="sub-menu">
                   
                   <li>
-                    <a href="/huoban">
+                    <a href="/me/IT%E5%8A%A8%E6%BC%AB.mp4">
                       
                       <i class="fa fa-film" style="margin-top: -20px;"></i>
                       
-                      <span>友情连接</span>
-                    </a>
-                  </li>
-                  
-                  <li>
-                    <a href="/me">
-                      
-                      <i class="fa fa-film" style="margin-top: -20px;"></i>
-                      
-                      <span>关于我</span>
+                      <span>程序人生</span>
                     </a>
                   </li>
                   
@@ -1170,10 +1152,27 @@
         :data="listData"
         :class-option="classOption"
         class="warp"
-        style="height: 0px"
+        style="height: 30px"
       >
         <ul class="index-notice-content__ul">
           
+          
+            <li>
+              
+                <div class="index-notice-content__title">
+                  
+                    <a href="/archives" title="博客更新到2.0了,感谢你的浏览！" style="">
+                      博客更新到2.0了,感谢你的浏览！
+                    </a>
+                  
+                </div>
+                
+                  <div class="index-notice-content__date" style="">
+                    2021-07-08
+                  </div>
+                
+              
+            </li>
            
         </ul>
       </vue-seamless-scroll>
@@ -1188,7 +1187,7 @@
 <script>
   let seamless = JSON.parse('false');
   seamless = seamless ? 0 : 30;
-  let listData = '' || [];
+  let listData = '[object Object]' || [];
   listData = listData.split(',');
   var vm = new Vue({
     el: '#appIndexNotice',
@@ -1217,55 +1216,6 @@
 <!-- 首页文章置顶 -->
 
 
-
-<div class="topArticle" data-aos="fade-up">
-	<h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>推荐文章</h3>
-	<div class="articles">
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-			
-		
-	</div>
-</div>
 
 
 <!-- hash算法 -->
