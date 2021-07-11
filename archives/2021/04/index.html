@@ -60,6 +60,19 @@
         @media (max-width: 992px) {
             #waifu {
                 display: none;
+
+
+
+{% if theme.daovoice %}
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "{{theme.daovoice_app_id}}"
+    });
+  daovoice('update');
+  </script>
+{% endif %}
+                
             }
         }
     </style>
@@ -544,12 +557,6 @@
           <li class="post-item" data-aos="fade-left">
             <span class="post-date">04-25</span>
             <a class="post-title" href="/2021/04/25/%E6%BC%AB%E6%AD%A5%E8%A1%8C%E8%80%85/">漫步行者</a>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            <span class="post-date">04-25</span>
-            <a class="post-title" href="/2021/04/25/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E7%AF%87%E2%80%94%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87/">爬虫基础篇——之理论篇</a>
           </li>
         
           

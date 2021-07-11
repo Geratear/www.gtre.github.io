@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-05-25T07:02:35.477Z</updated>
+  <updated>2021-07-09T05:17:16.151Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,70 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Django框架之项目创建</title>
+    <link href="http://example.com/2021/07/09/web%E5%BC%80%E5%8F%91%E4%B9%8BDjango%E6%A1%86%E6%9E%B6/Django%E6%A1%86%E6%9E%B6%E4%B9%8B%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA/"/>
+    <id>http://example.com/2021/07/09/web%E5%BC%80%E5%8F%91%E4%B9%8BDjango%E6%A1%86%E6%9E%B6/Django%E6%A1%86%E6%9E%B6%E4%B9%8B%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA/</id>
+    <published>2021-07-09T05:16:20.819Z</published>
+    <updated>2021-07-09T05:17:16.151Z</updated>
+    
+    
+    
+    
+    
+    <category term="技术" scheme="http://example.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django框架之基础</title>
+    <link href="http://example.com/2021/07/09/web%E5%BC%80%E5%8F%91%E4%B9%8BDjango%E6%A1%86%E6%9E%B6/Django%E6%A1%86%E6%9E%B6%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    <id>http://example.com/2021/07/09/web%E5%BC%80%E5%8F%91%E4%B9%8BDjango%E6%A1%86%E6%9E%B6/Django%E6%A1%86%E6%9E%B6%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87/</id>
+    <published>2021-07-09T05:01:44.633Z</published>
+    <updated>2021-07-09T05:29:20.495Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>Django框架之基础</strong></p><ul><li><p>Django是用Python语言写的开源web开发框架，并遵循MVC设计。是劳伦斯出版集团开发新闻网站而开发的框架，于2005年7月在BSD许可证发布。</p></li><li><p>MVC框架核心思想是：解耦，让不同的代码之间降低耦合，增强代码的可扩展性和可移植性。</p></li></ul><p>MVC设计流程图：</p><p>客户端————————————&gt;服务器——————————————&gt;数据库</p><p>发出请求———————————&gt;接收请求处理返回结果————————</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;strong&gt;Django框架之基础&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Django是用Python语言写的开源web开发框架，并遵循MVC设计。是劳伦斯出版集团开发新闻网站而开发的框架，于2005年7月在BSD许可证发布。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;</summary>
+      
+    
+    
+    
+    
+    <category term="技术" scheme="http://example.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>爬虫基础篇——之理论篇</title>
+    <link href="http://example.com/2021/07/04/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E7%AF%87%E2%80%94%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87/"/>
+    <id>http://example.com/2021/07/04/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E7%AF%87%E2%80%94%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87/</id>
+    <published>2021-07-04T15:55:21.626Z</published>
+    <updated>2021-07-09T04:58:50.906Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.网络爬虫又称网络蜘蛛、网络机器人是一种按照一定的规则，自动抓取万维网信息的程序或脚本</p><p>2.搜索引擎就是通用网络爬虫，如：google、百度（通用爬虫）     通用爬虫具有一定的局限性<br>3.网络爬虫类型：<strong>通用网络爬虫</strong>、<strong>聚集网络爬虫</strong>、<strong>分布式网络爬</strong><br>4.爬虫主要步骤：</p><ul><li><p>1.对爬取目标的 url 定义</p></li><li><p>2.对网页数据分析与协议获取对应 HTML</p></li><li><p>3.对页面进行提取 HTML 页面有价值的数据<br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20190422003146166.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1NjU5ODEy,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="爬虫流程图"></p></li></ul><ol start="5"><li> 通用爬虫需要遵守一定规则（nofollow 协议或 Robots 协议），全称是网络爬虫排除标准</li><li>通用爬虫只能抓取 HTML、PDF、word、wps、XLP、PPT、TXflash、音频、脚本程序</li><li>HTTP 协议（Hyper Text Transfer Protocl，超文本传输协议）是面的规则</li><li>HTTPS 协议（Hypertext Transfer Protocl oVer Secure Socket Laye层（安全套接层）主要用于安全传输协议，在网络传输层进行加密</li></ol><ul><li>HTTP 的端口号：80</li><li>HTTPS 的端口号：443</li></ul><ol start="9"><li>HTTP 请求与响应：浏览器发送请求等待服务器响应并返回数流程图 浏览器 发送请求数据 响应并返回数据<br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20190422004510653.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="客户端与服务端连接流程图"></li><li>统一资源定位符 URL:如 <a href="http://www.baidu.com:8080/a">http://www.baidu.com:8080/a</a><br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/2019042200484918.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="统一资源定位符"></li></ol><p>11.客户端 HTTP 请求：</p><ul><li>浏览器发送一个 HTTP 请求到服务器</li><li>请求格式: 请求行、请求头、空行.请求数据</li><li>GET： http:// <a href="http://www.baidu.com/HTTP/1.1">www.baidu.com/HTTP/1.1</a></li><li>Host:：<a href="http://www.baidu.com/">www.baidu.com</a></li><li>User-Aget: Mozilla/chrome</li><li>Cookie：</li></ul><p>12.HTTP 请求主要分为 get 和 postGet 请求：</p><ul><li>Get请求：是从服务器上获取页面信息</li><li>Post 请求：是向服务器提交数据并获取页面信息</li><li><strong>Get 请求参数都显示在 URL 上，服务器根据请求 URL 的参数产生响的一部分</strong></li><li><strong>Post 请求参数在请求体中，消息长度没有限制而且隐式方式进行在 URL 中，而是在请求体中因此 Get 请求方式不安全，而 Post 请求方式相对来说比较安全</strong></li></ul><p>13.请求报头</p><ul><li>Host（主机和端口号）</li><li>UPgrade-lnsecure-Reuqusts(升级为 HTTPS 请求)</li><li>User-agent(浏览器名称)</li><li>Accept(传输文件类型)</li><li>Referer(页面跳转来源)</li><li>Accept-Encoding(文件编解码格式)</li><li>Accept-Language(语言类型)</li><li>Accept-charset(字符编码)</li><li>CookieContent-Type(Post 数据类型)</li><li>服务端 HTTP 响应</li></ul><p>14.响应报头</p><ul><li>Cache-Control:must-revalidate,no-cache,Private</li><li>Connection:Keep-alive</li><li>Content-Encoding:gzip</li><li>Content-Type:text/html;charset = utf-8</li><li>Date:sun,21 sep 2017.01:06.21 GMT<br>服务器端发送资源时的时间，不同时区在相互请求资源时间混乱，http 协议中发送时间都<br>是 GMT</li><li>Server : Tengine/1.4.6<br>服务器和相对应的版本，只是告诉浏览器服务器的信息</li><li>Transfer-Encoding:chunked</li></ul><ol start="15"><li>响应状态码：</li></ol><ul><li>200:访问成功正常</li><li>404:访问失败，没有找到请求信息</li><li>500:服务器端出现错误，请求未完成</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;1.网络爬虫又称网络蜘蛛、网络机器人是一种按照一定的规则，自动抓取万维网信息的程序或脚本&lt;/p&gt;
+&lt;p&gt;2.搜索引擎就是通用网络爬虫，如：google、百度（通用爬虫）     通用爬虫具有一定的局限性&lt;br&gt;3.网络爬虫类型：&lt;strong&gt;通用网络爬虫&lt;/strong&gt;</summary>
+      
+    
+    
+    
+    
+    <category term="爬虫" scheme="http://example.com/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>线程</title>
@@ -355,29 +419,6 @@
   </entry>
   
   <entry>
-    <title>爬虫基础篇——之理论篇</title>
-    <link href="http://example.com/2021/04/25/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E7%AF%87%E2%80%94%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87/"/>
-    <id>http://example.com/2021/04/25/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E7%AF%87%E2%80%94%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87/</id>
-    <published>2021-04-25T08:21:52.167Z</published>
-    <updated>2021-05-16T04:34:18.346Z</updated>
-    
-    <content type="html"><![CDATA[<p>1.网络爬虫又称网络蜘蛛、网络机器人是一种按照一定的规则，自动抓取万维网信息的程序或脚本</p><p>2.搜索引擎就是通用网络爬虫，如：google、百度（通用爬虫）     通用爬虫具有一定的局限性<br>3.网络爬虫类型：<strong>通用网络爬虫</strong>、<strong>聚集网络爬虫</strong>、<strong>分布式网络爬</strong><br>4.爬虫主要步骤：</p><ul><li><p>1.对爬取目标的 url 定义</p></li><li><p>2.对网页数据分析与协议获取对应 HTML</p></li><li><p>3.对页面进行提取 HTML 页面有价值的数据<br><img src="https://img-blog.csdnimg.cn/20190422003146166.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1NjU5ODEy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></li></ul><ol start="5"><li> 通用爬虫需要遵守一定规则（nofollow 协议或 Robots 协议），全称是网络爬虫排除标准</li><li>通用爬虫只能抓取 HTML、PDF、word、wps、XLP、PPT、TXflash、音频、脚本程序</li><li>HTTP 协议（Hyper Text Transfer Protocl，超文本传输协议）是面的规则</li><li>HTTPS 协议（Hypertext Transfer Protocl oVer Secure Socket Laye层（安全套接层）主要用于安全传输协议，在网络传输层进行加密</li></ol><ul><li>HTTP 的端口号：80</li><li>HTTPS 的端口号：443</li></ul><ol start="9"><li>HTTP 请求与响应：浏览器发送请求等待服务器响应并返回数流程图 浏览器 发送请求数据 响应并返回数据<br><img src="https://img-blog.csdnimg.cn/20190422004510653.png" alt="在这里插入图片描述"></li><li>统一资源定位符 URL:如 <a href="http://www.baidu.com:8080/a">http://www.baidu.com:8080/a</a><br><img src="https://img-blog.csdnimg.cn/2019042200484918.png" alt="在这里插入图片描述"></li></ol><p>11.客户端 HTTP 请求：</p><ul><li>浏览器发送一个 HTTP 请求到服务器</li><li>请求格式: 请求行、请求头、空行.请求数据</li><li>GET： http:// <a href="http://www.baidu.com/HTTP/1.1">www.baidu.com/HTTP/1.1</a></li><li>Host:：<a href="http://www.baidu.com/">www.baidu.com</a></li><li>User-Aget: Mozilla/chrome</li><li>Cookie：</li></ul><p>12.HTTP 请求主要分为 get 和 postGet 请求：</p><ul><li>Get请求：是从服务器上获取页面信息</li><li>Post 请求：是向服务器提交数据并获取页面信息</li><li><strong>Get 请求参数都显示在 URL 上，服务器根据请求 URL 的参数产生响的一部分</strong></li><li><strong>Post 请求参数在请求体中，消息长度没有限制而且隐式方式进行在 URL 中，而是在请求体中因此 Get 请求方式不安全，而 Post 请求方式相对来说比较安全</strong></li></ul><p>13.请求报头</p><ul><li>Host（主机和端口号）</li><li>UPgrade-lnsecure-Reuqusts(升级为 HTTPS 请求)</li><li>User-agent(浏览器名称)</li><li>Accept(传输文件类型)</li><li>Referer(页面跳转来源)</li><li>Accept-Encoding(文件编解码格式)</li><li>Accept-Language(语言类型)</li><li>Accept-charset(字符编码)</li><li>CookieContent-Type(Post 数据类型)</li><li>服务端 HTTP 响应</li></ul><p>14.响应报头</p><ul><li>Cache-Control:must-revalidate,no-cache,Private</li><li>Connection:Keep-alive</li><li>Content-Encoding:gzip</li><li>Content-Type:text/html;charset = utf-8</li><li>Date:sun,21 sep 2017.01:06.21 GMT<br>服务器端发送资源时的时间，不同时区在相互请求资源时间混乱，http 协议中发送时间都<br>是 GMT</li><li>Server : Tengine/1.4.6<br>服务器和相对应的版本，只是告诉浏览器服务器的信息</li><li>Transfer-Encoding:chunked</li></ul><ol start="15"><li>响应状态码：</li></ol><ul><li>200:访问成功正常</li><li>404:访问失败，没有找到请求信息</li><li>500:服务器端出现错误，请求未完成</li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;1.网络爬虫又称网络蜘蛛、网络机器人是一种按照一定的规则，自动抓取万维网信息的程序或脚本&lt;/p&gt;
-&lt;p&gt;2.搜索引擎就是通用网络爬虫，如：google、百度（通用爬虫）     通用爬虫具有一定的局限性&lt;br&gt;3.网络爬虫类型：&lt;strong&gt;通用网络爬虫&lt;/strong&gt;</summary>
-      
-    
-    
-    
-    
-    <category term="爬虫" scheme="http://example.com/tags/%E7%88%AC%E8%99%AB/"/>
-    
-  </entry>
-  
-  <entry>
     <title>黑夜</title>
     <link href="http://example.com/2021/04/25/%E9%BB%91%E5%A4%9C/"/>
     <id>http://example.com/2021/04/25/%E9%BB%91%E5%A4%9C/</id>
@@ -416,51 +457,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>了解我</title>
-    <link href="http://example.com/2021/04/25/%E4%BA%86%E8%A7%A3%E6%88%91/"/>
-    <id>http://example.com/2021/04/25/%E4%BA%86%E8%A7%A3%E6%88%91/</id>
-    <published>2021-04-25T08:21:52.151Z</published>
-    <updated>2021-06-26T12:52:55.757Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="博客的初心"><a href="#博客的初心" class="headerlink" title="博客的初心"></a>博客的初心</h2><p>希望记录平时遇到的问题和知识或所思所想！</p><ul><li>其实一直以来喜欢瞎折腾;(Ps):其实我弄水晶头、拉网线、配 IP、装系统、给手机贴膜的技术还算可以的，其它都不行。</li></ul><h2 id="兴趣"><a href="#兴趣" class="headerlink" title="兴趣"></a>兴趣</h2><ul><li>运动：跑步、溜冰、羽毛球都喜欢</li><li>摄影：任何时候都有美好的一瞬间</li><li>唱歌：五音不全的我也能成为麦霸</li><li>哲学：人生是一场无止境的哲学</li><li>音乐：许嵩、轻音乐</li><li>旅行：遇到不一样的人和风景</li><li>读书：历史，专业书籍</li><li>动漫：哆啦A梦、纳米核心、全职高手、末世觉醒等等</li><li>分享：喜欢把自己的经验分享给大家</li><li>DIY：一切皆可创造<h2 id="欢迎留言"><a href="#欢迎留言" class="headerlink" title="欢迎留言"></a>欢迎留言</h2>曾就职于朵莓网络，实习僧一枚。如果有什么建议和想法，都可以和我留言，就算留言未必有回响————By:轩</li><li>电子邮箱：<a href="mailto:&#x47;&#101;&#x72;&#97;&#x54;&#101;&#x61;&#114;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#46;&#99;&#x6f;&#109;">&#x47;&#101;&#x72;&#97;&#x54;&#101;&#x61;&#114;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#46;&#99;&#x6f;&#109;</a></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;博客的初心&quot;&gt;&lt;a href=&quot;#博客的初心&quot; class=&quot;headerlink&quot; title=&quot;博客的初心&quot;&gt;&lt;/a&gt;博客的初心&lt;/h2&gt;&lt;p&gt;希望记录平时遇到的问题和知识或所思所想！&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;其实一直以来喜欢瞎折腾;(Ps):其实我弄水晶头</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>彩虹弧度</title>
-    <link href="http://example.com/2021/04/25/%E5%BD%A9%E8%99%B9%E5%BC%A7%E5%BA%A6/"/>
-    <id>http://example.com/2021/04/25/%E5%BD%A9%E8%99%B9%E5%BC%A7%E5%BA%A6/</id>
-    <published>2021-04-25T08:21:52.151Z</published>
-    <updated>2021-05-16T04:35:14.817Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="彩虹弧度"><a href="#彩虹弧度" class="headerlink" title="彩虹弧度"></a>彩虹弧度</h2><p>背影云彩之间的花朵唯美而触手可及<br>舒服的船只游过温暖的心房</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;彩虹弧度&quot;&gt;&lt;a href=&quot;#彩虹弧度&quot; class=&quot;headerlink&quot; title=&quot;彩虹弧度&quot;&gt;&lt;/a&gt;彩虹弧度&lt;/h2&gt;&lt;p&gt;背影云彩之间的花朵唯美而触手可及&lt;br&gt;舒服的船只游过温暖的心房&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    
-    <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   

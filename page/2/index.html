@@ -60,6 +60,19 @@
         @media (max-width: 992px) {
             #waifu {
                 display: none;
+
+
+
+{% if theme.daovoice %}
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "{{theme.daovoice_app_id}}"
+    });
+  daovoice('update');
+  </script>
+{% endif %}
+                
             }
         }
     </style>
@@ -685,7 +698,7 @@
   transition: color 0.3s;
 }
 .flag-text .title a:hover {
-  color: #6EFFB5;
+  color: #6eb8ff;
 }
 .flag-text .excerpt {
   color: #eee;
@@ -959,8 +972,8 @@
   }
   .swiper-btn-color:hover,
   .swiper-btn-color2:hover {
-    background-color: #6EFFB5;
-    border: 1px solid #6EFFB5!important;
+    background-color: #6eb8ff;
+    border: 1px solid #6eb8ff!important;
   }
   .flag-text-btns {
     justify-content: center;
@@ -1104,6 +1117,165 @@
             <span class="post-time">2021-05-16</span>
           </div>
           <div class="post-title">
+            <a class="post-title-link" href="/2021/05/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习基础</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            
+              
+              <a href="/2021/05/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="lazyload" data-original="/medias/9.jpg" style="background-size: cover; 
+                background-position: center center;">
+              </a>
+            
+          </div>
+          <div class="post-content">
+            人工智能人工智能之父，艾伦.图灵。图灵测试是1950年进行的一项科研测试。
+马文·李·闵斯基（英语：Marvin Lee Minsky，1927年8月9日－2016年1月24日），科学家，专长于认知科学与人工智能领域，麻省理工学院人工智能实
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2021/05/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+            <i class="iconfont iconmore" style="float: right;  " title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        
+          <a href="/2021/05/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="lazyload" data-original="/medias/9.jpg" style="background-size: cover; 
+            background-position: center center;">
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post" data-aos="fade-up" style="   ">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time">2021-05-16</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2021/05/16/%E4%BA%92%E6%96%A5%E5%92%8C%E4%BA%92%E6%96%A5%E9%94%81/">互斥和互斥锁</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            
+              
+              <a href="/2021/05/16/%E4%BA%92%E6%96%A5%E5%92%8C%E4%BA%92%E6%96%A5%E9%94%81/" class="lazyload" data-original="/medias/2.jpg" style="background-size: cover; 
+                background-position: center center;">
+              </a>
+            
+          </div>
+          <div class="post-content">
+            互斥和互斥锁线程的互斥：要求一次一个线程的执行访问资源
+互斥锁：每个线程访问公共资源之前都要先申请锁。如果申请到锁，可以访问公共资源，当资源访问完毕，释放锁
+如果没有申请到锁，线程需要停止等待，直到获得锁。
+线程锁是全局变量访问
+申请锁：访
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2021/05/16/%E4%BA%92%E6%96%A5%E5%92%8C%E4%BA%92%E6%96%A5%E9%94%81/">
+            <i class="iconfont iconmore" style="  " title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        
+          <a href="/2021/05/16/%E4%BA%92%E6%96%A5%E5%92%8C%E4%BA%92%E6%96%A5%E9%94%81/" class="lazyload" data-original="/medias/2.jpg" style="background-size: cover; 
+            background-position: center center;">
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post" data-aos="fade-up" style="flex-direction: row-reverse;   ">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time">2021-05-16</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2021/05/16/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E8%BF%9B%E7%A8%8B%E6%88%96%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%9A%84%E8%BF%9B%E7%A8%8B/">Windows系统下的进程或跨平台的进程</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            
+              
+              <a href="/2021/05/16/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E8%BF%9B%E7%A8%8B%E6%88%96%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%9A%84%E8%BF%9B%E7%A8%8B/" class="lazyload" data-original="/medias/13.jpg" style="background-size: cover; 
+                background-position: center center;">
+              </a>
+            
+          </div>
+          <div class="post-content">
+            由于Python是跨平台的，Unix/Linux用fork函数。但是windows系统下没有fork函数，所以为支持多平台进程提供multiProcessing模块。
+multiProcessing模块multiProcessing模块提供
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2021/05/16/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E8%BF%9B%E7%A8%8B%E6%88%96%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%9A%84%E8%BF%9B%E7%A8%8B/">
+            <i class="iconfont iconmore" style="float: right;  " title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        
+          <a href="/2021/05/16/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E8%BF%9B%E7%A8%8B%E6%88%96%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%9A%84%E8%BF%9B%E7%A8%8B/" class="lazyload" data-original="/medias/13.jpg" style="background-size: cover; 
+            background-position: center center;">
+          </a>
+        
+      </div>
+    </article>
+  
+    <article class="post" data-aos="fade-up" style="   ">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time">2021-05-16</span>
+          </div>
+          <div class="post-title">
             <a class="post-title-link" href="/2021/05/16/MySQL/">MySQL数据库</a>
           </div>
           <div class="post-meta">
@@ -1138,7 +1310,7 @@
         </div>
         <div class="post-more">
           <a href="/2021/05/16/MySQL/">
-            <i class="iconfont iconmore" style="float: right;  " title="阅读更多"></i>
+            <i class="iconfont iconmore" style="  " title="阅读更多"></i>
           </a>
         </div>
       </div>
@@ -1151,7 +1323,7 @@
       </div>
     </article>
   
-    <article class="post" data-aos="fade-up" style="   ">
+    <article class="post" data-aos="fade-up" style="flex-direction: row-reverse;   ">
       <div class="post-main">
         <div class="post-info">
           <div class="post-time">
@@ -1192,7 +1364,7 @@
         </div>
         <div class="post-more">
           <a href="/2021/05/16/MongoDB/">
-            <i class="iconfont iconmore" style="  " title="阅读更多"></i>
+            <i class="iconfont iconmore" style="float: right;  " title="阅读更多"></i>
           </a>
         </div>
       </div>
@@ -1205,7 +1377,7 @@
       </div>
     </article>
   
-    <article class="post" data-aos="fade-up" style="flex-direction: row-reverse;   ">
+    <article class="post" data-aos="fade-up" style="   ">
       <div class="post-main">
         <div class="post-info">
           <div class="post-time">
@@ -1247,7 +1419,7 @@ Linux和Unix系统
         </div>
         <div class="post-more">
           <a href="/2021/05/16/Linux%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E8%BF%9B%E7%A8%8B%E5%87%BD%E6%95%B0/">
-            <i class="iconfont iconmore" style="float: right;  " title="阅读更多"></i>
+            <i class="iconfont iconmore" style="  " title="阅读更多"></i>
           </a>
         </div>
       </div>
@@ -1260,7 +1432,7 @@ Linux和Unix系统
       </div>
     </article>
   
-    <article class="post" data-aos="fade-up" style="   ">
+    <article class="post" data-aos="fade-up" style="flex-direction: row-reverse;   ">
       <div class="post-main">
         <div class="post-info">
           <div class="post-time">
@@ -1298,7 +1470,7 @@ Linux和Unix系统
         </div>
         <div class="post-more">
           <a href="/2021/05/16/kafka/">
-            <i class="iconfont iconmore" style="  " title="阅读更多"></i>
+            <i class="iconfont iconmore" style="float: right;  " title="阅读更多"></i>
           </a>
         </div>
       </div>
@@ -1311,7 +1483,7 @@ Linux和Unix系统
       </div>
     </article>
   
-    <article class="post" data-aos="fade-up" style="flex-direction: row-reverse;   ">
+    <article class="post" data-aos="fade-up" style="   ">
       <div class="post-main">
         <div class="post-info">
           <div class="post-time">
@@ -1349,65 +1521,13 @@ Linux和Unix系统
         </div>
         <div class="post-more">
           <a href="/2021/04/25/%E6%BC%AB%E6%AD%A5%E8%A1%8C%E8%80%85/">
-            <i class="iconfont iconmore" style="float: right;  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2021/04/25/%E6%BC%AB%E6%AD%A5%E8%A1%8C%E8%80%85/" class="lazyload" data-original="/medias/3.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-  
-    <article class="post" data-aos="fade-up" style="   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-04-25</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/04/25/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E7%AF%87%E2%80%94%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87/">爬虫基础篇——之理论篇</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2021/04/25/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E7%AF%87%E2%80%94%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87/" class="lazyload" data-original="/medias/6.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            1.网络爬虫又称网络蜘蛛、网络机器人是一种按照一定的规则，自动抓取万维网信息的程序或脚本
-2.搜索引擎就是通用网络爬虫，如：google、百度（通用爬虫）     通用爬虫具有一定的局限性3.网络爬虫类型：通用网络爬虫、聚集网络爬虫、分布式
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/04/25/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E7%AF%87%E2%80%94%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87/">
             <i class="iconfont iconmore" style="  " title="阅读更多"></i>
           </a>
         </div>
       </div>
       <div class="post-img">
         
-          <a href="/2021/04/25/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E7%AF%87%E2%80%94%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87/" class="lazyload" data-original="/medias/6.jpg" style="background-size: cover; 
+          <a href="/2021/04/25/%E6%BC%AB%E6%AD%A5%E8%A1%8C%E8%80%85/" class="lazyload" data-original="/medias/3.jpg" style="background-size: cover; 
             background-position: center center;">
           </a>
         
@@ -1513,112 +1633,6 @@ Linux和Unix系统
       </div>
     </article>
   
-    <article class="post" data-aos="fade-up" style="flex-direction: row-reverse;   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-04-25</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/04/25/%E4%BA%86%E8%A7%A3%E6%88%91/">了解我</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2021/04/25/%E4%BA%86%E8%A7%A3%E6%88%91/" class="lazyload" data-original="/medias/2.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            博客的初心希望记录平时遇到的问题和知识或所思所想！
-
-其实一直以来喜欢瞎折腾;(Ps):其实我弄水晶头、拉网线、配 IP、装系统、给手机贴膜的技术还算可以的，其它都不行。
-
-兴趣
-运动：跑步、溜冰、羽毛球都喜欢
-摄影：任何时候都有美好的一瞬
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/04/25/%E4%BA%86%E8%A7%A3%E6%88%91/">
-            <i class="iconfont iconmore" style="float: right;  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2021/04/25/%E4%BA%86%E8%A7%A3%E6%88%91/" class="lazyload" data-original="/medias/2.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-  
-    <article class="post" data-aos="fade-up" style="   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-04-25</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/04/25/%E5%BD%A9%E8%99%B9%E5%BC%A7%E5%BA%A6/">彩虹弧度</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2021/04/25/%E5%BD%A9%E8%99%B9%E5%BC%A7%E5%BA%A6/" class="lazyload" data-original="/medias/10.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            彩虹弧度背影云彩之间的花朵唯美而触手可及舒服的船只游过温暖的心房
-
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/04/25/%E5%BD%A9%E8%99%B9%E5%BC%A7%E5%BA%A6/">
-            <i class="iconfont iconmore" style="  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2021/04/25/%E5%BD%A9%E8%99%B9%E5%BC%A7%E5%BA%A6/" class="lazyload" data-original="/medias/10.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-  
 </section>
 <!-- 翻页 -->
 
@@ -1646,6 +1660,10 @@ Linux和Unix系统
 
 <!-- 花瓣和雪花飘落 -->
 <!-- 雪花和花瓣特效 -->
+
+  
+    <script src="/js/falling/snow.js"></script>
+  
 
 
 

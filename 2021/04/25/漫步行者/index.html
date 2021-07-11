@@ -60,6 +60,19 @@
         @media (max-width: 992px) {
             #waifu {
                 display: none;
+
+
+
+{% if theme.daovoice %}
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "{{theme.daovoice_app_id}}"
+    });
+  daovoice('update');
+  </script>
+{% endif %}
+                
             }
         }
     </style>
@@ -580,17 +593,16 @@
 
   
   <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/6.jpg" style="background-size: cover; 
+    <div class="post-nav-img lazyload" data-original="/medias/5.jpg" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/2021/04/25/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E7%AF%87%E2%80%94%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87/" class="post-nav-link">
+    <a href="/2021/04/25/%E9%BB%91%E5%A4%9C/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fa fa-angle-right"></i>
-        <div>爬虫基础篇——之理论篇</div>
+        <div>黑夜</div>
       </div>
       <!-- <div class="content">
-        1.网络爬虫又称网络蜘蛛、网络机器人是一种按照一定的规则，自动抓取万维网信息的程序或脚本
-2.搜索引擎就是通用网络爬虫，
+        夜熙熙攘攘 白昼灯火通明 夜晚黑夜的宁静是多么安详也让浮躁喧闹的事物变得瞬间停留也许是安静让人所思所想也许是内心的停留让
       </div> -->
     </a>
   </div>

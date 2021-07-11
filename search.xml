@@ -4,6 +4,63 @@
   
     
     <entry>
+      <title>Django框架之项目创建</title>
+      <link href="2021/07/09/web%E5%BC%80%E5%8F%91%E4%B9%8BDjango%E6%A1%86%E6%9E%B6/Django%E6%A1%86%E6%9E%B6%E4%B9%8B%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA/"/>
+      <url>2021/07/09/web%E5%BC%80%E5%8F%91%E4%B9%8BDjango%E6%A1%86%E6%9E%B6/Django%E6%A1%86%E6%9E%B6%E4%B9%8B%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Django框架之基础</title>
+      <link href="2021/07/09/web%E5%BC%80%E5%8F%91%E4%B9%8BDjango%E6%A1%86%E6%9E%B6/Django%E6%A1%86%E6%9E%B6%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+      <url>2021/07/09/web%E5%BC%80%E5%8F%91%E4%B9%8BDjango%E6%A1%86%E6%9E%B6/Django%E6%A1%86%E6%9E%B6%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87/</url>
+      
+        <content type="html"><![CDATA[<p><strong>Django框架之基础</strong></p><ul><li><p>Django是用Python语言写的开源web开发框架，并遵循MVC设计。是劳伦斯出版集团开发新闻网站而开发的框架，于2005年7月在BSD许可证发布。</p></li><li><p>MVC框架核心思想是：解耦，让不同的代码之间降低耦合，增强代码的可扩展性和可移植性。</p></li></ul><p>MVC设计流程图：</p><p>客户端————————————&gt;服务器——————————————&gt;数据库</p><p>发出请求———————————&gt;接收请求处理返回结果————————</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>爬虫基础篇——之理论篇</title>
+      <link href="2021/07/04/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E7%AF%87%E2%80%94%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87/"/>
+      <url>2021/07/04/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E7%AF%87%E2%80%94%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87/</url>
+      
+        <content type="html"><![CDATA[<p>1.网络爬虫又称网络蜘蛛、网络机器人是一种按照一定的规则，自动抓取万维网信息的程序或脚本</p><p>2.搜索引擎就是通用网络爬虫，如：google、百度（通用爬虫）     通用爬虫具有一定的局限性<br>3.网络爬虫类型：<strong>通用网络爬虫</strong>、<strong>聚集网络爬虫</strong>、<strong>分布式网络爬</strong><br>4.爬虫主要步骤：</p><ul><li><p>1.对爬取目标的 url 定义</p></li><li><p>2.对网页数据分析与协议获取对应 HTML</p></li><li><p>3.对页面进行提取 HTML 页面有价值的数据<br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20190422003146166.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1NjU5ODEy,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="爬虫流程图"></p></li></ul><ol start="5"><li> 通用爬虫需要遵守一定规则（nofollow 协议或 Robots 协议），全称是网络爬虫排除标准</li><li>通用爬虫只能抓取 HTML、PDF、word、wps、XLP、PPT、TXflash、音频、脚本程序</li><li>HTTP 协议（Hyper Text Transfer Protocl，超文本传输协议）是面的规则</li><li>HTTPS 协议（Hypertext Transfer Protocl oVer Secure Socket Laye层（安全套接层）主要用于安全传输协议，在网络传输层进行加密</li></ol><ul><li>HTTP 的端口号：80</li><li>HTTPS 的端口号：443</li></ul><ol start="9"><li>HTTP 请求与响应：浏览器发送请求等待服务器响应并返回数流程图 浏览器 发送请求数据 响应并返回数据<br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20190422004510653.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="客户端与服务端连接流程图"></li><li>统一资源定位符 URL:如 <a href="http://www.baidu.com:8080/a">http://www.baidu.com:8080/a</a><br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/2019042200484918.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="统一资源定位符"></li></ol><p>11.客户端 HTTP 请求：</p><ul><li>浏览器发送一个 HTTP 请求到服务器</li><li>请求格式: 请求行、请求头、空行.请求数据</li><li>GET： http:// <a href="http://www.baidu.com/HTTP/1.1">www.baidu.com/HTTP/1.1</a></li><li>Host:：<a href="http://www.baidu.com/">www.baidu.com</a></li><li>User-Aget: Mozilla/chrome</li><li>Cookie：</li></ul><p>12.HTTP 请求主要分为 get 和 postGet 请求：</p><ul><li>Get请求：是从服务器上获取页面信息</li><li>Post 请求：是向服务器提交数据并获取页面信息</li><li><strong>Get 请求参数都显示在 URL 上，服务器根据请求 URL 的参数产生响的一部分</strong></li><li><strong>Post 请求参数在请求体中，消息长度没有限制而且隐式方式进行在 URL 中，而是在请求体中因此 Get 请求方式不安全，而 Post 请求方式相对来说比较安全</strong></li></ul><p>13.请求报头</p><ul><li>Host（主机和端口号）</li><li>UPgrade-lnsecure-Reuqusts(升级为 HTTPS 请求)</li><li>User-agent(浏览器名称)</li><li>Accept(传输文件类型)</li><li>Referer(页面跳转来源)</li><li>Accept-Encoding(文件编解码格式)</li><li>Accept-Language(语言类型)</li><li>Accept-charset(字符编码)</li><li>CookieContent-Type(Post 数据类型)</li><li>服务端 HTTP 响应</li></ul><p>14.响应报头</p><ul><li>Cache-Control:must-revalidate,no-cache,Private</li><li>Connection:Keep-alive</li><li>Content-Encoding:gzip</li><li>Content-Type:text/html;charset = utf-8</li><li>Date:sun,21 sep 2017.01:06.21 GMT<br>服务器端发送资源时的时间，不同时区在相互请求资源时间混乱，http 协议中发送时间都<br>是 GMT</li><li>Server : Tengine/1.4.6<br>服务器和相对应的版本，只是告诉浏览器服务器的信息</li><li>Transfer-Encoding:chunked</li></ul><ol start="15"><li>响应状态码：</li></ol><ul><li>200:访问成功正常</li><li>404:访问失败，没有找到请求信息</li><li>500:服务器端出现错误，请求未完成</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 爬虫 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>线程</title>
       <link href="2021/05/25/%E7%BA%BF%E7%A8%8B/"/>
       <url>2021/05/25/%E7%BA%BF%E7%A8%8B/</url>
@@ -281,25 +338,6 @@
         <tags>
             
             <tag> 生活 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>爬虫基础篇——之理论篇</title>
-      <link href="2021/04/25/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E7%AF%87%E2%80%94%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87/"/>
-      <url>2021/04/25/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E7%AF%87%E2%80%94%E4%B9%8B%E7%90%86%E8%AE%BA%E7%AF%87/</url>
-      
-        <content type="html"><![CDATA[<p>1.网络爬虫又称网络蜘蛛、网络机器人是一种按照一定的规则，自动抓取万维网信息的程序或脚本</p><p>2.搜索引擎就是通用网络爬虫，如：google、百度（通用爬虫）     通用爬虫具有一定的局限性<br>3.网络爬虫类型：<strong>通用网络爬虫</strong>、<strong>聚集网络爬虫</strong>、<strong>分布式网络爬</strong><br>4.爬虫主要步骤：</p><ul><li><p>1.对爬取目标的 url 定义</p></li><li><p>2.对网页数据分析与协议获取对应 HTML</p></li><li><p>3.对页面进行提取 HTML 页面有价值的数据<br><img src="https://img-blog.csdnimg.cn/20190422003146166.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1NjU5ODEy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></li></ul><ol start="5"><li> 通用爬虫需要遵守一定规则（nofollow 协议或 Robots 协议），全称是网络爬虫排除标准</li><li>通用爬虫只能抓取 HTML、PDF、word、wps、XLP、PPT、TXflash、音频、脚本程序</li><li>HTTP 协议（Hyper Text Transfer Protocl，超文本传输协议）是面的规则</li><li>HTTPS 协议（Hypertext Transfer Protocl oVer Secure Socket Laye层（安全套接层）主要用于安全传输协议，在网络传输层进行加密</li></ol><ul><li>HTTP 的端口号：80</li><li>HTTPS 的端口号：443</li></ul><ol start="9"><li>HTTP 请求与响应：浏览器发送请求等待服务器响应并返回数流程图 浏览器 发送请求数据 响应并返回数据<br><img src="https://img-blog.csdnimg.cn/20190422004510653.png" alt="在这里插入图片描述"></li><li>统一资源定位符 URL:如 <a href="http://www.baidu.com:8080/a">http://www.baidu.com:8080/a</a><br><img src="https://img-blog.csdnimg.cn/2019042200484918.png" alt="在这里插入图片描述"></li></ol><p>11.客户端 HTTP 请求：</p><ul><li>浏览器发送一个 HTTP 请求到服务器</li><li>请求格式: 请求行、请求头、空行.请求数据</li><li>GET： http:// <a href="http://www.baidu.com/HTTP/1.1">www.baidu.com/HTTP/1.1</a></li><li>Host:：<a href="http://www.baidu.com/">www.baidu.com</a></li><li>User-Aget: Mozilla/chrome</li><li>Cookie：</li></ul><p>12.HTTP 请求主要分为 get 和 postGet 请求：</p><ul><li>Get请求：是从服务器上获取页面信息</li><li>Post 请求：是向服务器提交数据并获取页面信息</li><li><strong>Get 请求参数都显示在 URL 上，服务器根据请求 URL 的参数产生响的一部分</strong></li><li><strong>Post 请求参数在请求体中，消息长度没有限制而且隐式方式进行在 URL 中，而是在请求体中因此 Get 请求方式不安全，而 Post 请求方式相对来说比较安全</strong></li></ul><p>13.请求报头</p><ul><li>Host（主机和端口号）</li><li>UPgrade-lnsecure-Reuqusts(升级为 HTTPS 请求)</li><li>User-agent(浏览器名称)</li><li>Accept(传输文件类型)</li><li>Referer(页面跳转来源)</li><li>Accept-Encoding(文件编解码格式)</li><li>Accept-Language(语言类型)</li><li>Accept-charset(字符编码)</li><li>CookieContent-Type(Post 数据类型)</li><li>服务端 HTTP 响应</li></ul><p>14.响应报头</p><ul><li>Cache-Control:must-revalidate,no-cache,Private</li><li>Connection:Keep-alive</li><li>Content-Encoding:gzip</li><li>Content-Type:text/html;charset = utf-8</li><li>Date:sun,21 sep 2017.01:06.21 GMT<br>服务器端发送资源时的时间，不同时区在相互请求资源时间混乱，http 协议中发送时间都<br>是 GMT</li><li>Server : Tengine/1.4.6<br>服务器和相对应的版本，只是告诉浏览器服务器的信息</li><li>Transfer-Encoding:chunked</li></ul><ol start="15"><li>响应状态码：</li></ol><ul><li>200:访问成功正常</li><li>404:访问失败，没有找到请求信息</li><li>500:服务器端出现错误，请求未完成</li></ul>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 爬虫 </tag>
             
         </tags>
       

@@ -60,6 +60,19 @@
         @media (max-width: 992px) {
             #waifu {
                 display: none;
+
+
+
+{% if theme.daovoice %}
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "{{theme.daovoice_app_id}}"
+    });
+  daovoice('update');
+  </script>
+{% endif %}
+                
             }
         }
     </style>
@@ -543,6 +556,114 @@
         <div class="post-info">
           <div class="post-time">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time">2021-07-09</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2021/07/09/web%E5%BC%80%E5%8F%91%E4%B9%8BDjango%E6%A1%86%E6%9E%B6/Django%E6%A1%86%E6%9E%B6%E4%B9%8B%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA/">Django框架之项目创建</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            
+              
+              <a href="/2021/07/09/web%E5%BC%80%E5%8F%91%E4%B9%8BDjango%E6%A1%86%E6%9E%B6/Django%E6%A1%86%E6%9E%B6%E4%B9%8B%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA/" class="lazyload" data-original="/medias/14.jpg" style="background-size: cover; 
+                background-position: center center;">
+              </a>
+            
+          </div>
+          <div class="post-content">
+            
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2021/07/09/web%E5%BC%80%E5%8F%91%E4%B9%8BDjango%E6%A1%86%E6%9E%B6/Django%E6%A1%86%E6%9E%B6%E4%B9%8B%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA/">
+            <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        
+          <a href="/2021/07/09/web%E5%BC%80%E5%8F%91%E4%B9%8BDjango%E6%A1%86%E6%9E%B6/Django%E6%A1%86%E6%9E%B6%E4%B9%8B%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA/" class="lazyload" data-original="/medias/14.jpg" style="background-size: cover; 
+            background-position: center center;">
+          </a>
+        
+      </div>
+    </article>
+    
+    <article class="post" data-aos="fade-up"
+      style="">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time">2021-07-09</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2021/07/09/web%E5%BC%80%E5%8F%91%E4%B9%8BDjango%E6%A1%86%E6%9E%B6/Django%E6%A1%86%E6%9E%B6%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87/">Django框架之基础</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            
+              
+              <a href="/2021/07/09/web%E5%BC%80%E5%8F%91%E4%B9%8BDjango%E6%A1%86%E6%9E%B6/Django%E6%A1%86%E6%9E%B6%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87/" class="lazyload" data-original="/medias/7.jpg" style="background-size: cover; 
+                background-position: center center;">
+              </a>
+            
+          </div>
+          <div class="post-content">
+            Django框架之基础
+
+Django是用Python语言写的开源web开发框架，并遵循MVC设计。是劳伦斯出版集团开发新闻网站而开发的框架，于2005年7月在BSD许可证发布。
+
+MVC框架核心思想是：解耦，让不同的代码之间降低耦合，增强
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2021/07/09/web%E5%BC%80%E5%8F%91%E4%B9%8BDjango%E6%A1%86%E6%9E%B6/Django%E6%A1%86%E6%9E%B6%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87/">
+            <i class="iconfont iconmore" style="" title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        
+          <a href="/2021/07/09/web%E5%BC%80%E5%8F%91%E4%B9%8BDjango%E6%A1%86%E6%9E%B6/Django%E6%A1%86%E6%9E%B6%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87/" class="lazyload" data-original="/medias/7.jpg" style="background-size: cover; 
+            background-position: center center;">
+          </a>
+        
+      </div>
+    </article>
+    
+    <article class="post" data-aos="fade-up"
+      style="flex-direction: row-reverse;">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
             <span class="post-time">2021-05-25</span>
           </div>
           <div class="post-title">
@@ -963,115 +1084,6 @@ Queue()函数在内存中申请一段缓冲区
       <div class="post-img">
         
           <a href="/2021/05/16/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="lazyload" data-original="/medias/9.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-    
-    <article class="post" data-aos="fade-up"
-      style="flex-direction: row-reverse;">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-05-16</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/05/16/%E4%BA%92%E6%96%A5%E5%92%8C%E4%BA%92%E6%96%A5%E9%94%81/">互斥和互斥锁</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2021/05/16/%E4%BA%92%E6%96%A5%E5%92%8C%E4%BA%92%E6%96%A5%E9%94%81/" class="lazyload" data-original="/medias/2.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            互斥和互斥锁线程的互斥：要求一次一个线程的执行访问资源
-互斥锁：每个线程访问公共资源之前都要先申请锁。如果申请到锁，可以访问公共资源，当资源访问完毕，释放锁
-如果没有申请到锁，线程需要停止等待，直到获得锁。
-线程锁是全局变量访问
-申请锁：访
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/05/16/%E4%BA%92%E6%96%A5%E5%92%8C%E4%BA%92%E6%96%A5%E9%94%81/">
-            <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2021/05/16/%E4%BA%92%E6%96%A5%E5%92%8C%E4%BA%92%E6%96%A5%E9%94%81/" class="lazyload" data-original="/medias/2.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-    
-    <article class="post" data-aos="fade-up"
-      style="">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-05-16</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/05/16/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E8%BF%9B%E7%A8%8B%E6%88%96%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%9A%84%E8%BF%9B%E7%A8%8B/">Windows系统下的进程或跨平台的进程</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2021/05/16/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E8%BF%9B%E7%A8%8B%E6%88%96%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%9A%84%E8%BF%9B%E7%A8%8B/" class="lazyload" data-original="/medias/13.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            由于Python是跨平台的，Unix/Linux用fork函数。但是windows系统下没有fork函数，所以为支持多平台进程提供multiProcessing模块。
-multiProcessing模块multiProcessing模块提供
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/05/16/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E8%BF%9B%E7%A8%8B%E6%88%96%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%9A%84%E8%BF%9B%E7%A8%8B/">
-            <i class="iconfont iconmore" style="" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2021/05/16/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E8%BF%9B%E7%A8%8B%E6%88%96%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%9A%84%E8%BF%9B%E7%A8%8B/" class="lazyload" data-original="/medias/13.jpg" style="background-size: cover; 
             background-position: center center;">
           </a>
         
