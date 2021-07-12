@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-07-09T05:17:16.151Z</updated>
+  <updated>2021-07-12T13:21:45.223Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>未定义</title>
+    <link href="http://example.com/2021/07/12/%E7%94%9F%E6%B4%BB/%E6%9C%AA%E5%AE%9A%E4%B9%89/"/>
+    <id>http://example.com/2021/07/12/%E7%94%9F%E6%B4%BB/%E6%9C%AA%E5%AE%9A%E4%B9%89/</id>
+    <published>2021-07-12T12:20:15.414Z</published>
+    <updated>2021-07-12T13:21:45.223Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>自定义</strong></p><p>感谢你的分享的音乐，让我成长很多，也感谢认识你</p><p>虽然相见短暂，但是让我明白相见恨晚意义，如此相见不如怀恋</p><p>虽然知道你的联系方式，但是并不知道如何联系你，不想打扰你更多的是不知如何开口的尴尬</p><p>你的努力、奋斗、坚持、不抛弃、不放弃、一切皆有可能。</p><p>让我有所惭愧，我不知如何行动。我并未遗忘，只是不知如何回应。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;strong&gt;自定义&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;感谢你的分享的音乐，让我成长很多，也感谢认识你&lt;/p&gt;
+&lt;p&gt;虽然相见短暂，但是让我明白相见恨晚意义，如此相见不如怀恋&lt;/p&gt;
+&lt;p&gt;虽然知道你的联系方式，但是并不知道如何联系你，不想打扰你更多的是不知如何开口的尴尬&lt;</summary>
+      
+    
+    
+    
+    
+    <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>Django框架之项目创建</title>
@@ -437,26 +462,6 @@
     
     
     <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello</title>
-    <link href="http://example.com/2021/04/25/hello/"/>
-    <id>http://example.com/2021/04/25/hello/</id>
-    <published>2021-04-25T08:21:52.151Z</published>
-    <updated>2021-04-25T08:29:46.745Z</updated>
-    
-    <content type="html"><![CDATA[<p>大家好！欢迎来到GeraTear的Blog。笔者电子邮箱:<a href="mailto:&#71;&#x65;&#114;&#97;&#x74;&#101;&#x61;&#114;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#71;&#x65;&#114;&#97;&#x74;&#101;&#x61;&#114;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a> ,欢迎一起交流与成长！</p><h2 id="Hello"><a href="#Hello" class="headerlink" title="Hello"></a>Hello</h2><p>——————如果说人生是自我编写的程序<br>——————那么青春就是其中意味深长的代码<br>——————我们敲击着人生的轨迹<br>——————我们尝试着不断自我调试与优化<br>——————无论运行结果如何都将是人生风景</p><p>By:轩</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;大家好！欢迎来到GeraTear的Blog。笔者电子邮箱:&lt;a href=&quot;mailto:&amp;#71;&amp;#x65;&amp;#114;&amp;#97;&amp;#x74;&amp;#101;&amp;#x61;&amp;#114;&amp;#64;&amp;#x67;&amp;#x6d;&amp;#97;&amp;#x69;&amp;#x6c;&amp;#x2e;&amp;#x63;</summary>
-      
-    
-    
-    
     
   </entry>
   
